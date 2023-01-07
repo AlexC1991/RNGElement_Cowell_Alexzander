@@ -1742,7 +1742,7 @@ MonoBehaviour:
   element5: {fileID: 3176259265427247619, guid: f4aa2ba53fe9b1b4788dcbd272d1a322, type: 3}
   canvas1: {fileID: 1382565612}
   canvas2: {fileID: 633280011}
-  rngTimer: 7.2
+  rngTimer: 6.5
   displayedTimer: {fileID: 921762004}
   elementCount1: {fileID: 1506672728}
   elementCount2: {fileID: 1398314865}

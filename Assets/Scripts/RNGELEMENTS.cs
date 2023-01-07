@@ -203,18 +203,18 @@ namespace AlexzanderCowell
                 Answer1 = true;
             }
 
-            if (rngAnswer2 >= 147)
+            if (rngAnswer2 >= 186)
             {
                 Answer2 = true;
 
             }
 
-            if (rngAnswer3 >= 35)
+            if (rngAnswer3 >= 42)
             {
                 Answer3 = true;
             }
 
-            if (rngAnswer4 >= 18)
+            if (rngAnswer4 >= 23)
             {
                 Answer4 = true;
             }
