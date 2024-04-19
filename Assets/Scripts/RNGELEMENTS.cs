@@ -94,6 +94,7 @@ namespace AlexzanderCowell
         // Update is called once per frame
         void Update()
         {
+            ResultsDisplayed();
             displayedTimer.text = "Timer: " + rngTimer.ToString("f2");
             elementCount1.text = totalWin1.ToString("f0");
             elementCount2.text = totalWin2.ToString("f0");
@@ -102,97 +103,112 @@ namespace AlexzanderCowell
             elementCount5.text = totalWin5.ToString("f0");
 
 
-            if (rngTimer == rngTimerRestart)
-            {
-                canvas1.SetActive(true);
-                canvas2.SetActive(false);
-                rngAnswer1 = rngAnswerReset;
-                rngAnswer2 = rngAnswerReset;
-                rngAnswer3 = rngAnswerReset;
-                rngAnswer4 = rngAnswerReset;
-                rngAnswer5 = rngAnswerReset;
-                rngCheck1 = true;
-                rngCheck2 = true;
-                rngCheck3 = true;
-                rngCheck4 = true;
-                rngCheck5 = true;
-                timerStart = true;
-                Answer1 = false;
-                Answer2 = false;
-                Answer3 = false;
-                Answer4 = false;
-                Answer5 = false;
-            }
+            //if (rngTimer == rngTimerRestart)
+           // {
+                //canvas1.SetActive(true);
+                //canvas2.SetActive(false);
+               // rngAnswer1 = rngAnswerReset;
+               // rngAnswer2 = rngAnswerReset;
+               // rngAnswer3 = rngAnswerReset;
+               // rngAnswer4 = rngAnswerReset;
+               // rngAnswer5 = rngAnswerReset;
+               // rngCheck1 = true;
+               // rngCheck2 = true;
+               // rngCheck3 = true;
+               // rngCheck4 = true;
+               // rngCheck5 = true;
+                //timerStart = true;
+               // Answer1 = false;
+               // Answer2 = false;
+              //  Answer3 = false;
+              //  Answer4 = false;
+              //  Answer5 = false;
+           // }
+           
+           Debug.Log(rngCounter1);
+           Debug.Log(rngCounter2);
+           Debug.Log(rngCounter3);
+           Debug.Log(rngCounter4);
+           Debug.Log(rngCounter5);
 
-            if (timerStart == true)
-            {
-                rngTimer -= 1f * Time.deltaTime;
-            }
+            //if (timerStart)
+            //{
+             //   rngTimer -= 1f * Time.deltaTime;
+            //}
 
-            if (rngCheck1 == true)
-            {
+            //if (rngCheck1)
+            //{
                 rngCounter1 = Random.Range(1, 10);
                 
                 if (rngCounter1 == 4)
                 {
                     rngAnswer1 += (1);
+                    totalWin1 += 1;
                 }
-            }
+            //}
             
-            if (rngCheck2 == true)
-            {
+           // if (rngCheck2)
+            //{
                 rngCounter2 = Random.Range(1, 20);
                 
                 if (rngCounter2 == 7)
                 {
                     rngAnswer2 += (1);
+                    totalWin2 += 1;
                 }
-            }
+            //}
 
-            if (rngCheck3 == true)
-            {
+            //if (rngCheck3)
+            //{
                 rngCounter3 = Random.Range(2, 100);
                 
                 if (rngCounter3 == 51)
                 {
                     rngAnswer3 += (1);
+                    totalWin3 += 1;
                 }
-            }
+            //}
 
-            if (rngCheck4 == true)
-            {
+            //if (rngCheck4)
+            //{
                 rngCounter4 = Random.Range(1, 250);
 
                 if (rngCounter4 == 80)
                 {
                     rngAnswer4 += (1);
+                    totalWin4 += 1;
                 }
-            }
+            //}
 
-            if (rngCheck5 == true)
-            {
+            //if (rngCheck5)
+            //{
                 rngCounter5 = Random.Range(1, 2000);
 
                 if (rngCounter5 == 389)
                 {
-                    rngAnswer5 += (1);                 
+                    rngAnswer5 += (1);
+                    totalWin5 += 1;
                 }
-            }
+            //}
                 
-            if (rngTimer <= 0.0)
-            {
-                timerStart = false;
-                rngCheck1 = false;
-                rngCheck2 = false;
-                rngCheck3 = false;
-                rngCheck4 = false;
-                rngCheck5 = false;               
-                rngTimer = 0;
+            //if (rngTimer <= 0.2f)
+            //{
+                //timerStart = false;
+                //rngCheck1 = false;
+                //rngCheck2 = false;
+                //rngCheck3 = false;
+                //rngCheck4 = false;
+                //rngCheck5 = false;               
+                //rngTimer = 0;
                 //canvas1.SetActive(false);
                 //canvas2.SetActive(true);
-                ResultsDisplayed();
-               
-            }
+                //ResultsDisplayed();
+                
+                //if (!rngCheck1 && !rngCheck2 && !rngCheck3 && !rngCheck4 && !rngCheck5)
+                //{
+                  //  ResetTimer();
+                //}
+            //}
                         
         }
 
@@ -206,7 +222,6 @@ namespace AlexzanderCowell
             if (rngAnswer2 >= 186)
             {
                 Answer2 = true;
-
             }
 
             if (rngAnswer3 >= 42)
@@ -224,15 +239,15 @@ namespace AlexzanderCowell
                 Answer5 = true;
             }
 
-            if (Answer1 == true)
+            if (Answer1)
             {                             
-                if (Answer2 == false)
+                if (!Answer2)
                 {
-                    if (Answer3 == false)
+                    if (!Answer3)
                     {
-                        if (Answer4 == false)
+                        if (!Answer4)
                         {
-                            if (Answer5 == false)
+                            if (!Answer5)
                             {
                                 totalWin1 += (1);
                                 textColor.GetComponent<TextMeshProUGUI>().color = Color.cyan;
